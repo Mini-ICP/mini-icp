@@ -1,0 +1,26 @@
+{
+  "canisters": {
+    "mini-icp-backend": {
+      "main": "src/mini-icp-backend/main.mo",
+      "type": "motoko"
+    },
+    "mini-icp-frontend": {
+      "dependencies": [
+        "mini-icp-backend"
+      ],
+      "source": [
+        "src/mini-icp-frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "mini-icp-frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
