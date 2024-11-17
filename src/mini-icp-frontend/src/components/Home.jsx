@@ -5,43 +5,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from './ui/button'
 import { IILogin, IILogout } from '../auth';
 import { useIdentity } from '../context/AppContext';
-import Image1 from '../assets/game_03.jpeg'
-import Image2 from '../assets/game_13.jpeg'
-import Image3 from '../assets/game_14.jpeg'
-
-// Sample game data - in a real app, this would come from your backend
-const trendingGames = [
-  {
-    id: 1,
-    title: "Ultimate Champions",
-    description: "Collect, manage, and trade your favourite football players.",
-    players: "2.5K",
-    prizePools: "50K ICP",
-    image: Image1,
-    category: "E-Sports",
-    rating: 4.8
-  },
-  {
-    id: 2,
-    title: "Everdawn",
-    description: "Free-to-Play, 3D Tactical Trading Card Game.",
-    players: "1.8K",
-    prizePools: "30K ICP",
-    image: Image2,
-    category: "Simulation",
-    rating: 4.6
-  },
-  {
-    id: 3,
-    title: "Fit Club",
-    description: "Workout, compete, and earn on your onchain fitness journey.",
-    players: "3.2K",
-    prizePools: "15K ICP",
-    image: Image3,
-    category: "P2E",
-    rating: 4.9
-  }
-]
+import { gamesData } from './gamesData';
 
 const HomePage = () => {
 
@@ -121,7 +85,7 @@ const HomePage = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {trendingGames.map((game) => (
+          {gamesData.map((game) => (
             <Card 
               key={game.id}
               className="bg-[#17223A] border-[#CC187C] hover:border-[#FFA500] transition-colors duration-300 cursor-pointer"

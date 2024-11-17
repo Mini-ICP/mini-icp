@@ -3,45 +3,30 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { Users, Trophy, Gamepad, Star, Clock, Wallet } from 'lucide-react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card'
 import { Button } from './ui/button'
-import Image1 from '../assets/game_03.jpeg'
+import { gamesData } from './gamesData';
 
 export default function GameDetails({ gameId, onBack  }) {
 
-    const { id } = useParams();
-    const navigate = useNavigate();
+  const { id } = useParams();
+  const navigate = useNavigate();
   // Mock data - in a real app, fetch this based on the gameId
-  const gameDetails = {
-    id: 1,
-    title: "Ultimate Champions",
-    description: "Collect, manage, and trade your favourite football players.",
-    longDescription: `
-        Ultimate Champions is a free-to-play fantasy Football and Basketball game powered by officially licensed 
-        digital cards as NFTs. Players act as team managers, building their dream squads to compete weekly for 
-        rewards. Each card represents a real-world athlete, and players can trade, buy, and sell their cards across 
-        the blockchain.
-    `,
-    players: "2.5K",
-    prizePools: "50K ICP",
-    image: Image1,
-    category: "E-Sports",
-    rating: 4.8,
-    developer: "DragonForge Studios",
-    releaseDate: "2024-01-15",
-    minStake: "5 ICP",
-    tournaments: [
-      {
-        name: "Weekly Dragon Master",
-        prize: "1000 ICP",
-        participants: 128,
-        startTime: "2024-11-10 18:00 UTC"
-      },
-      {
-        name: "Daily Skirmish",
-        prize: "100 ICP",
-        participants: 64,
-        startTime: "2024-11-05 00:00 UTC"
-      }
-    ]
+
+  const gameDetails = gamesData.find(game => game.id === parseInt(id));
+
+  if (!gameDetails) {
+    return (
+        <div className="min-h-screen bg-[#02020E] text-white py-8">
+            <div className="container mx-auto px-4 text-center">
+                <h1 className="text-4xl font-bold text-[#CC187C] mb-4">Game Not Found</h1>
+                <Button 
+                    onClick={() => navigate('/')}
+                    className="text-[#90EE90] hover:text-[#90EE90]/80 transition"
+                >
+                    Return to Home
+                </Button>
+            </div>
+        </div>
+    );
   }
 
   const handleBack = () => {

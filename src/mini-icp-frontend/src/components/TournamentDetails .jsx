@@ -9,39 +9,117 @@ export default function TournamentDetails({ tournamentId, onBack }) {
     const { id } = useParams();
     const navigate = useNavigate();
   // Mock data - replace with actual API calls
-  const tournament = {
-    id: '1',
-    game: 'Cat Town: Gaming Night',
-    name: 'Hosted by 0x5049...9dA3',
-    startDate: '2024-11-15',
-    endDate: '2024-12-20',
-    prizePool: 1000,
-    participants: 64,
-    maxParticipants: 128,
-    status: 'ongoing',
-    currentBets: 500,
-    streamUrl: '#',
-    description: {
-      overview: "Cat Town is a cozy DeFi game on Base where players build their feline empire by purchasing cats and combining floofs to increase their ETH yield and earn $KIBBLE rewards. Engage in minigames to earn additional rewards and accessories for your cats, while exploring a town full of interactive features.",
-      format: "Double elimination bracket. Best of 3 matches until semi-finals, Best of 5 for semi-finals and finals.",
-      rules: [
-        "Standard competitive ruleset",
-        "All characters and maps enabled",
-        "5 minute time limit per round",
-        "No pause abuse"
-      ],
-      prizes: [
-        { place: 1, amount: 500, description: "First Place + Championship Trophy" },
-        { place: 2, amount: 300, description: "Second Place + Silver Medal" },
-        { place: 3, amount: 200, description: "Third Place + Bronze Medal" }
-      ]
+  const tournaments = [
+    {
+        id: '1',
+        game: 'Cat Town: Gaming Night',
+        name: 'Hosted by 0x5049...9dA3',
+        startDate: '2024-11-15',
+        endDate: '2024-12-20',
+        prizePool: 1000,
+        participants: 64,
+        maxParticipants: 128,
+        status: 'ongoing',
+        currentBets: 500,
+        streamUrl: '#',
+        description: {
+            overview: "Cat Town is a cozy DeFi game on Base where players build their feline empire by purchasing cats and combining floofs to increase their ETH yield and earn $KIBBLE rewards. Engage in minigames to earn additional rewards and accessories for your cats, while exploring a town full of interactive features.",
+            format: "Double elimination bracket. Best of 3 matches until semi-finals, Best of 5 for semi-finals and finals.",
+            rules: [
+                "Standard competitive ruleset",
+                "All characters and maps enabled",
+                "5 minute time limit per round",
+                "No pause abuse"
+            ],
+            prizes: [
+                { place: 1, amount: 500, description: "First Place + Championship Trophy" },
+                { place: 2, amount: 300, description: "Second Place + Silver Medal" },
+                { place: 3, amount: 200, description: "Third Place + Bronze Medal" }
+            ]
+        },
+        players: [
+            { id: 1, name: '0xIC0D...AB10', bet: 100, odds: 2.5, rank: 1 },
+            { id: 2, name: '0xD07D...BFa0', bet: 75, odds: 3.0, rank: 2 },
+            { id: 3, name: '0xABC1...XYZ2', bet: 50, odds: 4.0, rank: 3 },
+            { id: 4, name: '0x123F...789E', bet: 25, odds: 5.0, rank: 4 },
+        ]
     },
-    players: [
-      { id: 1, name: '0xIC0D...AB10', bet: 100, odds: 2.5, rank: 1 },
-      { id: 2, name: '0xD07D...BFa0', bet: 75, odds: 3.0, rank: 2 },
-      { id: 3, name: '0xD07D...BFa0', bet: 50, odds: 4.0, rank: 3 },
-      { id: 4, name: '0xD07D...BFa0', bet: 25, odds: 5.0, rank: 4 },
-    ]
+    {
+        id: '2',
+        game: 'Weekly Tournament #45',
+        name: 'Hosted by 0x5049...9dA3',
+        startDate: '2024-10-10',
+        endDate: '2024-10-12',
+        prizePool: 1000,
+        participants: 32,
+        maxParticipants: 32,
+        status: 'ended',
+        currentBets: 800,
+        streamUrl: '#',
+        description: {
+            overview: "Weekly tournament featuring competitive gameplay and exciting prizes.",
+            format: "Single elimination bracket. Best of 3 matches throughout.",
+            rules: [
+                "Standard competitive ruleset",
+                "All characters and maps enabled",
+                "3 minute time limit per round"
+            ],
+            prizes: [
+                { place: 1, amount: 500, description: "First Place" },
+                { place: 2, amount: 300, description: "Second Place" },
+                { place: 3, amount: 200, description: "Third Place" }
+            ]
+        },
+        players: [
+            { id: 1, name: '0xWIN1...RST1', bet: 200, odds: 2.0, rank: 1 },
+            { id: 2, name: '0xPLY2...UVW2', bet: 150, odds: 2.5, rank: 2 },
+            { id: 3, name: '0xGMR3...XYZ3', bet: 100, odds: 3.0, rank: 3 },
+            { id: 4, name: '0xBET4...ABC4', bet: 50, odds: 4.0, rank: 4 },
+        ]
+    },
+    {
+        id: '3',
+        game: 'Fit Club: 10 Day Challenge',
+        name: 'Hosted by 0x5049...9dA3',
+        startDate: '2024-11-10',
+        endDate: '2024-12-30',
+        prizePool: 3000,
+        participants: 32,
+        maxParticipants: 100,
+        status: 'ongoing',
+        currentBets: 30,
+        streamUrl: '#',
+        description: {
+            overview: "A 10-day fitness challenge where participants compete to achieve their fitness goals.",
+            format: "Point-based system with daily challenges and leaderboard updates.",
+            rules: [
+                "Daily workout completion required",
+                "Photo proof for each challenge",
+                "Fair play and honest reporting"
+            ],
+            prizes: [
+                { place: 1, amount: 1500, description: "First Place + Premium Membership" },
+                { place: 2, amount: 1000, description: "Second Place + Fitness Package" },
+                { place: 3, amount: 500, description: "Third Place + Supplement Pack" }
+            ]
+        },
+        players: [
+            { id: 1, name: '0xFIT1...GYM1', bet: 150, odds: 2.2, rank: 1 },
+            { id: 2, name: '0xRUN2...JOG2', bet: 100, odds: 2.8, rank: 2 },
+            { id: 3, name: '0xLFT3...PRO3', bet: 75, odds: 3.5, rank: 3 },
+            { id: 4, name: '0xCRD4...FIT4', bet: 25, odds: 5.5, rank: 4 },
+        ]
+    }
+  ];
+
+  const tournament = tournaments.find(t => t.id === id);
+
+  if (!tournament) {
+    return (
+        <div className="container mx-auto p-6 bg-[#02020E] min-h-screen text-white">
+            <h1>Tournament not found</h1>
+        </div>
+    );
   }
 
   const handleBack = () => {
