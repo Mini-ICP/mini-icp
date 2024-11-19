@@ -163,7 +163,7 @@ export default function TournamentDetails({ tournamentId, onBack }) {
             </div>
           </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6 text-base">
               <div className="flex items-center gap-2">
                 <Trophy className="h-5 w-5 text-[#FFA500]" />
                 <span className="font-bold text-[#FFA500]">{tournament.prizePool} USDC</span>
@@ -194,23 +194,23 @@ export default function TournamentDetails({ tournamentId, onBack }) {
           <CardContent className="space-y-6">
             {/* Overview Section */}
             <div>
-              <h3 className="text-lg font-semibold text-[#38D7F5] mb-2">Overview</h3>
-              <p className="text-[#90EE90]">{tournament.description.overview}</p>
+              <h3 className="text-xl font-semibold text-[#38D7F5] mb-2">Overview</h3>
+              <p className="text-[#90EE90] text-lg">{tournament.description.overview}</p>
             </div>
 
             {/* Format Section */}
             <div>
-              <h3 className="text-lg font-semibold text-[#38D7F5] mb-2 flex items-center gap-2">
+              <h3 className="text-xl font-semibold text-[#38D7F5] mb-2 flex items-center gap-2">
                 <Swords className="h-5 w-5" />
                 Tournament Format
               </h3>
-              <p className="text-[#90EE90]">{tournament.description.format}</p>
+              <p className="text-[#90EE90] text-lg">{tournament.description.format}</p>
             </div>
 
             {/* Rules Section */}
             <div>
-              <h3 className="text-lg font-semibold text-[#38D7F5] mb-2">Rules</h3>
-              <ul className="list-disc list-inside text-[#90EE90]">
+              <h3 className="text-xl font-semibold text-[#38D7F5] mb-2">Rules</h3>
+              <ul className="list-disc list-inside text-[#90EE90] text-lg">
                 {tournament.description.rules.map((rule, index) => (
                   <li key={index} className="mb-1">{rule}</li>
                 ))}
@@ -219,7 +219,7 @@ export default function TournamentDetails({ tournamentId, onBack }) {
 
             {/* Prize Distribution */}
             <div>
-              <h3 className="text-lg font-semibold text-[#38D7F5] mb-2 flex items-center gap-2">
+              <h3 className="text-xl font-semibold text-[#38D7F5] mb-2 flex items-center gap-2">
                 <Medal className="h-5 w-5" />
                 Prize Distribution
               </h3>
@@ -227,7 +227,7 @@ export default function TournamentDetails({ tournamentId, onBack }) {
                 {tournament.description.prizes.map((prize) => (
                   <div 
                     key={prize.place}
-                    className="flex items-center justify-between p-3 rounded-lg bg-[#2D3F6D]"
+                    className="flex items-center justify-between p-3 rounded-lg bg-[#2D3F6D] text-base"
                   >
                     <div className="flex items-center gap-2">
                       <span className="text-[#FFA500] font-bold">#{prize.place}</span>
@@ -250,7 +250,7 @@ export default function TournamentDetails({ tournamentId, onBack }) {
             <div className="rounded-md border border-[#CC187C] overflow-hidden">
               <div className="w-full">
                 {/* Table Header */}
-                <div className="bg-[#2D3F6D] grid grid-cols-4 p-4 text-[#38D7F5] font-medium">
+                <div className="bg-[#2D3F6D] grid grid-cols-4 p-4 text-[#38D7F5] text-xl font-medium">
                   <div>Rank</div>
                   <div>Player</div>
                   <div className="text-right">Current Bet</div>
@@ -261,7 +261,7 @@ export default function TournamentDetails({ tournamentId, onBack }) {
                 {tournament.players.map((player) => (
                   <div 
                     key={player.id} 
-                    className="grid grid-cols-4 p-4 border-t border-[#CC187C]/20 hover:bg-[#2D3F6D] transition-colors"
+                    className="grid grid-cols-4 text-base p-4 border-t border-[#CC187C]/20 hover:bg-[#2D3F6D] transition-colors"
                   >
                     <div className="font-medium text-[#90EE90]">#{player.rank}</div>
                     <div className="text-white">{player.name}</div>

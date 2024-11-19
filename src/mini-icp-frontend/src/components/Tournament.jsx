@@ -81,7 +81,7 @@ const Tournament = () => {
                 </div>
             </CardHeader>
             <CardContent>
-                <div className="grid grid-cols-3 gap-4">
+                <div className="grid grid-cols-3 gap-4 text-base">
                 <div className="flex items-center gap-2">
                     <Clock className="h-4 w-4 text-[#38D7F5]" />
                     <span className="text-[#38D7F5]">{new Date(tournament.startDate).toLocaleDateString()} - {new Date(tournament.endDate).toLocaleDateString()}</span>

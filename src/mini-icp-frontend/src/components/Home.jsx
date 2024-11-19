@@ -88,7 +88,7 @@ const HomePage = () => {
           {gamesData.map((game) => (
             <Card 
               key={game.id}
-              className="bg-[#17223A] border-[#CC187C] hover:border-[#FFA500] transition-colors duration-300 cursor-pointer"
+              className="bg-[#17223A] border-[#CC187C] hover:border-[#FFA500] transition-colors duration-300 cursor-pointer shadow-[0_0_20px_rgba(204,24,124,0.5)]"
               onClick={() => onSelectGame(game.id)}
             >
               <img
@@ -103,20 +103,20 @@ const HomePage = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="flex items-center gap-4 text-[#38D7F5]">
+                <div className="flex items-center gap-4 text-[#FFA500] text-sm">
                   <div className="flex items-center gap-2">
-                    <Users size={16} />
+                    <Users size={16} className="text-[#90EE90]" />
                     <span>{game.players} active</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Trophy size={16} />
+                    <Trophy size={16} className="text-[#90EE90]" />
                     <span>{game.prizePools}</span>
                   </div>
                 </div>
               </CardContent>
-              <CardFooter className="flex justify-between text-[#38D7F5]">
+              <CardFooter className="flex justify-between text-[#FFA500] text-sm">
                 <div className="flex items-center gap-2">
-                  <Gamepad size={16} />
+                  <Gamepad size={16} className="text-[#90EE90]" />
                   <span>{game.category}</span>
                 </div>
                 <div className="flex items-center gap-1">

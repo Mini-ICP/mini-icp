@@ -58,20 +58,20 @@ export default function GameDetails({ gameId, onBack  }) {
               {gameDetails.title}
             </h1>
             
-            <div className="flex flex-wrap gap-4 mb-6">
-              <div className="flex items-center gap-2 text-[#38D7F5]">
+            <div className="flex flex-wrap gap-4 mb-6 text-sm">
+              <div className="flex items-center gap-2 text-[#FFA500]">
                 <Users size={16} />
                 <span>{gameDetails.players} active</span>
               </div>
-              <div className="flex items-center gap-2 text-[#38D7F5]">
+              <div className="flex items-center gap-2 text-[#FFA500]">
                 <Trophy size={16} />
                 <span>{gameDetails.prizePools}</span>
               </div>
-              <div className="flex items-center gap-2 text-[#38D7F5]">
+              <div className="flex items-center gap-2 text-[#FFA500]">
                 <Gamepad size={16} />
                 <span>{gameDetails.category}</span>
               </div>
-              <div className="flex items-center gap-2 text-[#38D7F5]">
+              <div className="flex items-center gap-2 text-[#FFA500]">
                 <Star size={16} className="text-[#FFA500]" />
                 <span>{gameDetails.rating}</span>
               </div>
@@ -81,7 +81,7 @@ export default function GameDetails({ gameId, onBack  }) {
               <p className="text-lg text-[#90EE90] mb-6">
                 {gameDetails.description}
               </p>
-              <div className="whitespace-pre-line text-[#38D7F5]">
+              <div className="whitespace-pre-line text-lg text-[#38D7F5]">
                 {gameDetails.longDescription}
               </div>
             </div>
@@ -146,15 +146,15 @@ export default function GameDetails({ gameId, onBack  }) {
                 <CardTitle className="text-[#90EE90]">Game Information</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="flex justify-between text-[#38D7F5]">
+                <div className="flex justify-between text-base text-[#38D7F5]">
                   <span>Developer</span>
                   <span>{gameDetails.developer}</span>
                 </div>
-                <div className="flex justify-between text-[#38D7F5]">
+                <div className="flex justify-between text-base text-[#38D7F5]">
                   <span>Release Date</span>
                   <span>{gameDetails.releaseDate}</span>
                 </div>
-                <div className="flex justify-between text-[#38D7F5]">
+                <div className="flex justify-between text-base text-[#38D7F5]">
                   <span>Minimum Stake</span>
                   <span>{gameDetails.minStake}</span>
                 </div>
